@@ -47,8 +47,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // KMT_beta
-arma::vec KMT_beta(Rcpp::String strDistr, arma::mat SMat, arma::mat VMat, arma::vec ReVec, arma::vec xVec, arma::vec Normed_X, bool bGreedy, bool bParallel, int nThreads);
-RcppExport SEXP _KMT_KMT_beta(SEXP strDistrSEXP, SEXP SMatSEXP, SEXP VMatSEXP, SEXP ReVecSEXP, SEXP xVecSEXP, SEXP Normed_XSEXP, SEXP bGreedySEXP, SEXP bParallelSEXP, SEXP nThreadsSEXP) {
+arma::vec KMT_beta(Rcpp::String strDistr, arma::mat SMat, arma::mat VMat, arma::vec ReVec, arma::vec xVec, arma::vec Normed_X, int bParallel, int nThreads);
+RcppExport SEXP _KMT_KMT_beta(SEXP strDistrSEXP, SEXP SMatSEXP, SEXP VMatSEXP, SEXP ReVecSEXP, SEXP xVecSEXP, SEXP Normed_XSEXP, SEXP bParallelSEXP, SEXP nThreadsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -58,10 +58,9 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< arma::vec >::type ReVec(ReVecSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type xVec(xVecSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type Normed_X(Normed_XSEXP);
-    Rcpp::traits::input_parameter< bool >::type bGreedy(bGreedySEXP);
-    Rcpp::traits::input_parameter< bool >::type bParallel(bParallelSEXP);
+    Rcpp::traits::input_parameter< int >::type bParallel(bParallelSEXP);
     Rcpp::traits::input_parameter< int >::type nThreads(nThreadsSEXP);
-    rcpp_result_gen = Rcpp::wrap(KMT_beta(strDistr, SMat, VMat, ReVec, xVec, Normed_X, bGreedy, bParallel, nThreads));
+    rcpp_result_gen = Rcpp::wrap(KMT_beta(strDistr, SMat, VMat, ReVec, xVec, Normed_X, bParallel, nThreads));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -101,7 +100,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_KMT_Unz", (DL_FUNC) &_KMT_Unz, 7},
     {"_KMT_GetUnzVec", (DL_FUNC) &_KMT_GetUnzVec, 8},
-    {"_KMT_KMT_beta", (DL_FUNC) &_KMT_KMT_beta, 9},
+    {"_KMT_KMT_beta", (DL_FUNC) &_KMT_KMT_beta, 8},
     {"_KMT_Init_Distr", (DL_FUNC) &_KMT_Init_Distr, 6},
     {"_KMT_Get_G_Mat", (DL_FUNC) &_KMT_Get_G_Mat, 6},
     {NULL, NULL, 0}

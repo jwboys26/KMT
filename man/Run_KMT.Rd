@@ -9,7 +9,7 @@ Run_KMT(
   strDistr = "Normal",
   bEstimation = FALSE,
   bFast_Estimation = FALSE,
-  bParallel = FALSE,
+  bParallel = 0,
   nThreads = 16
 )
 }
@@ -22,7 +22,7 @@ Run_KMT(
 
 \item{bFast_Estimation}{a logical value which specifies whether or not to use the maximum likelihood estimator (\eqn{\hat{\theta}}) for the location and scale parameters The default value is FALSE.}
 
-\item{bParallel}{a logical value which specifies whether or not to use the parallel computing. The default value is FALSE.}
+\item{bParallel}{a logical value which specifies whether or not to use the parallel computing. The default value is 0 (=FALSE).}
 
 \item{nThreads}{the number of threads when bParallel is TRUE. The default value is 16.}
 }

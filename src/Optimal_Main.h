@@ -1,9 +1,9 @@
 #ifndef __OPTIMAL_MAIN_H
 #define __OPTIMAL_MAIN_H
 
-arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, bool bParallel, int nThreads);
+arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, int bParallel, int nThreads);
 
-arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, bool bParallel, int nThreads){
+arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, int bParallel, int nThreads){
 
   int n = X.size();
 
@@ -14,7 +14,7 @@ arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, bool bParallel, in
   double OptimalX = 0;
 
 
-  if(bParallel){
+  if(bParallel==1){
 
     T1=Parallel_GetT1(X, G, nThreads);
     OptimalFVal=T1[1];
@@ -22,9 +22,6 @@ arma::vec FindOptimal(arma::vec X, arma::mat G, Distr& distr, bool bParallel, in
 
 
   }else{
-    
-    Rcout <<"Here" << std::endl;
-    
     
     T1 = GetT1(X, G);
     OptimalFVal=T1[1];

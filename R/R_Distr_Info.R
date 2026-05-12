@@ -31,7 +31,6 @@
 #'
 #'}
 #'@examples
-#'data(Normal_table)
 #' x = 1.2
 #' lst= Distr_Information(x, "Normal")
 #' phix = lst$phix 

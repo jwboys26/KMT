@@ -40,7 +40,6 @@ a list of the following values:
 Obtain all details regarding the null distribution such as c1(x).
 }
 \examples{
-data(Normal_table)
 x = 1.2
 lst= Distr_Information(x, "Normal")
 phix = lst$phix 

@@ -50,8 +50,7 @@ BM = function(x=0, t=1, n=10, d=1){
   if(d==1){
     
     if(length(x)!=1){
-      print("x should be a real-valued scalar: e.g., 0.")
-      stop()
+      x=0
     }
     
     lst0 = Generate_BM(x,t,n)
@@ -74,8 +73,7 @@ BM = function(x=0, t=1, n=10, d=1){
   }else{
     
     if(length(x)!=2){
-      print("x should be a real-valued 2x1 vector: e.g., c(0,0).")
-      stop()
+      x = c(0,0)
     }
     
     x1 = x[1]

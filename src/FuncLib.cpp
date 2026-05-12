@@ -22,6 +22,10 @@ using namespace Rcpp;
 #include "Common.h"
 
 
+#include <Rconfig.h>
+#include <R_ext/BLAS.h>
+#include <R_ext/Lapack.h>
+
 
 //[[Rcpp::export]]
 double Unz(double z, arma::vec& Normed_X, Rcpp::String strDistr,
@@ -142,7 +146,7 @@ List GetUnzVec(arma::vec Normed_X, Rcpp::String strDistr,
 
 //[[Rcpp::export]]
 arma::vec KMT_beta(Rcpp::String strDistr, arma::mat SMat, arma::mat VMat, arma::vec ReVec, arma::vec xVec, arma::vec Normed_X,
-             bool bGreedy=false, bool bParallel=false, int nThreads=32){
+             int bParallel=0, int nThreads=32){
 
 
   double dGap= 1e-3;

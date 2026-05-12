@@ -104,9 +104,6 @@ arma::vec GetT1(arma::vec X, arma::mat G){
       Optimal = Xi;
     }
 
-    //Rcout <<"Optimal is"  <<Optimal << " dMax is " << dMax << "\n" << std::endl;
-
-
   }
 
   arma::vec out(2);

@@ -9,8 +9,8 @@ GetUnzVec <- function(Normed_X, strDistr, xVec, SMat, VMat, ReVec, nNum = 10L, s
     .Call('_KMT_GetUnzVec', PACKAGE = 'KMT', Normed_X, strDistr, xVec, SMat, VMat, ReVec, nNum, sighat)
 }
 
-KMT_beta <- function(strDistr, SMat, VMat, ReVec, xVec, Normed_X, bGreedy = FALSE, bParallel = FALSE, nThreads = 32L) {
-    .Call('_KMT_KMT_beta', PACKAGE = 'KMT', strDistr, SMat, VMat, ReVec, xVec, Normed_X, bGreedy, bParallel, nThreads)
+KMT_beta <- function(strDistr, SMat, VMat, ReVec, xVec, Normed_X, bParallel = 0L, nThreads = 32L) {
+    .Call('_KMT_KMT_beta', PACKAGE = 'KMT', strDistr, SMat, VMat, ReVec, xVec, Normed_X, bParallel, nThreads)
 }
 
 Init_Distr <- function(strDistr, SMat, VMat, ReVec, xVec, x) {
