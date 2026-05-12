@@ -7,7 +7,7 @@ class Distr{
 
 private:
 
-  const double pi = arma::datum::pi;
+  const double pi = 3.141592;
 
   const double M_sqrt2=1.414214;
   const double M_sqrt2pi=2.506628;
@@ -239,9 +239,12 @@ double Distr::Re(double x){
   double dMajor = ReVec[nInd];
   double remaining = (x-xi)*re(xi);
 
-  double out = dMajor-remaining;
-  return out;
+  //double out = dMajor-remaining;
+  //return out;
 
+  double out = dMajor+remaining;
+  return (2.429956-out);
+  
 }
 
 
