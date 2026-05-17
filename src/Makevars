@@ -22,8 +22,8 @@
 PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
 PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) 
 
-PKG_CPPFLAGS = $(PKG_CPPFLAGS) -Xclang -fopenmp
-#PKG_CPPFLAGS +=  -Xclang -fopenmp
+#PKG_CPPFLAGS = $(PKG_CPPFLAGS) -Xclang -fopenmp
+PKG_CPPFLAGS +=  -Xclang -fopenmp
 PKG_LIBS = $(PKG_LIBS) -lomp
 
 
