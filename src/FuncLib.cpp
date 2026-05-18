@@ -3,7 +3,7 @@
 #include <R_ext/BLAS.h>
 #include <R_ext/Lapack.h>
 
-#include <omp.h>
+//#include <omp.h>
 
 
 #include <RcppArmadillo.h>
