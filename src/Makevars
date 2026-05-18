@@ -28,14 +28,17 @@ PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS)
 
 ifeq ($(OS), Windows_NT, Linux) 
      # Windows specific flags 
-      PKG_CPPFLAGS = $(PKG_CPPFLAGS) -Xclang -fopenmp 
+     PKG_CPPFLAGS = $(PKG_CPPFLAGS) -Xclang -fopenmp 
 else # macOS specific flags 
 
 		 PKG_CPPFLAGS +=  -Xclang -fopenmp   	
-     #ifeq ($(OS), Darwin) 
+     ifeq ($(OS), Linux) 
      # Mac specific flags 
-     #    PKG_CPPFLAGS +=  -Xclang -fopenmp   
-		 #endif
+         PKG_CPPFLAGS = $(PKG_CPPFLAGS) -Xclang -fopenmp 
+         
+		 else  # Mac specific flags  name is Darwin
+		     PKG_CPPFLAGS +=  -Xclang -fopenmp   
+		 endif
 endif
 
 PKG_LIBS = $(PKG_LIBS) -lomp
