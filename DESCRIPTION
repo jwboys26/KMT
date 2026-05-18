@@ -21,7 +21,7 @@ Description: Consider a goodness-of-fit problem of
             at the later version.
 License: GPL-2
 Encoding: UTF-8
-SystemRequirements: GNU make     
+SystemRequirements: GNU make    
 Depends: 
     R (>= 3.5)
 Imports: Rcpp (>= 1.0.10), ggplot2, stats, utils, Rsolnp, graphics, gumbel
