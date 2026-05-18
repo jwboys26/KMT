@@ -1,3 +1,11 @@
+
+#include <Rconfig.h>
+#include <R_ext/BLAS.h>
+#include <R_ext/Lapack.h>
+
+#include <omp.h>
+
+
 #include <RcppArmadillo.h>
 using namespace Rcpp;
 
@@ -14,17 +22,12 @@ using namespace Rcpp;
 //   http://gallery.rcpp.org/
 //
 
-#include <omp.h>
 
 #include "Distr.h"
 #include "Optimal_Side.h"
 #include "Optimal_Main.h"
 #include "Common.h"
 
-
-#include <Rconfig.h>
-#include <R_ext/BLAS.h>
-#include <R_ext/Lapack.h>
 
 
 //[[Rcpp::export]]
