@@ -33,12 +33,13 @@ endif
 
 ifeq ($(OS), Darwin) 
     # Mac specific flags  name is Darwin
-		  PKG_CPPFLAGS +=  -Xclang -fopenmp   
+		  PKG_CPPFLAGS +=  -Xclang -fopenmp
+		  PKG_LIBS += -lomp
+		  #PKG_LIBS = $(PKG_LIBS) -lomp
 endif
 
 
 
-PKG_LIBS = $(PKG_LIBS) -lomp
 
 
 
